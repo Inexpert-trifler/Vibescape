@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood-Based Music Recommender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="mood-happy">
+  <div class="background-orb orb-one"></div>
+  <div class="background-orb orb-two"></div>
+  <div class="background-grid"></div>
+
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Mood Playlist</p>
+      <h1>How are you feeling today? 🎧</h1>
+      <p class="subtitle">
+        Pick a mood and discover a few songs that fit the vibe.
+      </p>
+
+      <div class="mood-selector" aria-label="Mood selection">
+        <button class="mood-button active" type="button" data-mood="happy">
+          <span class="emoji" aria-hidden="true">😄</span>
+          <span>Happy</span>
+        </button>
+        <button class="mood-button" type="button" data-mood="sad">
+          <span class="emoji" aria-hidden="true">😔</span>
+          <span>Sad</span>
+        </button>
+        <button class="mood-button" type="button" data-mood="energetic">
+          <span class="emoji" aria-hidden="true">⚡</span>
+          <span>Energetic</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="songs-panel">
+      <div class="songs-header">
+        <div>
+          <p class="songs-label">Recommended songs</p>
+          <h2 id="moodTitle">Happy Picks</h2>
+        </div>
+        <div class="mood-pill" id="moodPill">Sunny mood</div>
+      </div>
+
+      <div class="loading-state" id="loadingState" aria-hidden="true">
+        <span class="loading-dot"></span>
+        <span class="loading-dot"></span>
+        <span class="loading-dot"></span>
+      </div>
+
+      <div class="songs-grid" id="songsContainer" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
