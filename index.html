@@ -6,51 +6,63 @@
   <title>Mood-Based Music Recommender</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="mood-happy">
-  <div class="background-orb orb-one"></div>
-  <div class="background-orb orb-two"></div>
-  <div class="background-grid"></div>
+  <div class="bg-layer base-bg"></div>
+  <div class="bg-layer gradient-bg"></div>
+  <div class="particles" aria-hidden="true" id="particles"></div>
+  
+  <div class="music-waves" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
 
-  <main class="app-shell">
-    <section class="hero-card">
-      <p class="eyebrow">Mood Playlist</p>
-      <h1>How are you feeling today? 🎧</h1>
-      <p class="subtitle">
-        Pick a mood and discover a few songs that fit the vibe.
-      </p>
+  <main class="app-container">
+    <header class="hero-section">
+      <div class="hero-content">
+        <span class="eyebrow">Vibescape</span>
+        <h1>How are you feeling today?</h1>
+        <p class="subtitle">Select your mood to discover the perfect soundtrack.</p>
+      </div>
 
-      <div class="mood-selector" aria-label="Mood selection">
+      <div class="mood-selector" aria-label="Mood selection" id="moodSelector">
         <button class="mood-button active" type="button" data-mood="happy">
+          <div class="btn-glow"></div>
           <span class="emoji" aria-hidden="true">😄</span>
-          <span>Happy</span>
+          <span class="label">Happy</span>
         </button>
         <button class="mood-button" type="button" data-mood="sad">
+          <div class="btn-glow"></div>
           <span class="emoji" aria-hidden="true">😔</span>
-          <span>Sad</span>
+          <span class="label">Sad</span>
         </button>
         <button class="mood-button" type="button" data-mood="energetic">
+          <div class="btn-glow"></div>
           <span class="emoji" aria-hidden="true">⚡</span>
-          <span>Energetic</span>
+          <span class="label">Energetic</span>
         </button>
       </div>
-    </section>
+    </header>
 
-    <section class="songs-panel">
-      <div class="songs-header">
-        <div>
-          <p class="songs-label">Recommended songs</p>
+    <section class="content-section">
+      <div class="section-header">
+        <div class="header-text">
           <h2 id="moodTitle">Happy Picks</h2>
+          <p class="songs-label">Handpicked for your current vibe</p>
         </div>
-        <div class="mood-pill" id="moodPill">Sunny mood</div>
+        <div class="mood-badge" id="moodPill">
+          Sunny mood
+        </div>
       </div>
 
-      <div class="loading-state" id="loadingState" aria-hidden="true">
-        <span class="loading-dot"></span>
-        <span class="loading-dot"></span>
-        <span class="loading-dot"></span>
+      <div class="loading-container" id="loadingState" aria-hidden="true">
+        <div class="music-loader">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
 
       <div class="songs-grid" id="songsContainer" aria-live="polite"></div>
