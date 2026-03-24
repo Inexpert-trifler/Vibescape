@@ -1,11 +1,56 @@
-# Vibescape
+# 🎧 Vibescape
 
-Vibescape is a mood-based music recommender with a scalable multi-page frontend structure and a modular Express backend that uses the free YouTube Data API v3.
+> 🚀 A modern **mood-based music discovery platform** powered by YouTube API — built like a real SaaS product.
 
-## Project Structure
+---
 
-```text
+## 🌟 Overview
+
+**Vibescape** is a full-stack web app that lets users discover and play music based on their mood.
+
+✨ Clean UI
+⚡ Fast API integration
+🎵 Real-time YouTube music playback
+
+---
+
+## 🎥 Demo Preview
+
+![Vibescape Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGZqZ3N0eWZ6b2N3Z2Q2cXo2Z3J3dHh3YzVwZ3V6c2NqY2FhZ3F2biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13HgwGsXF0aiGY/giphy.gif)
+
+---
+
+## ⚙️ Features
+
+* 🎭 Mood-based recommendations (Happy, Sad, Energetic)
+* 🔍 Smart search system
+* ▶️ YouTube music player integration
+* ❤️ Favorites system (local storage)
+* 🎨 Modern UI with animations
+* ⚡ Fast backend with Express.js
+* 🔐 API-based architecture
+
+---
+
+## 🧠 How It Works
+
+```mermaid
+flowchart LR
+A[User selects mood] --> B[Frontend sends request]
+B --> C[Backend API]
+C --> D[YouTube Data API]
+D --> E[Filtered Results]
+E --> F[Frontend UI]
+F --> G[Play Music]
+```
+
+---
+
+## 🗂️ Project Structure
+
+```
 vibescape/
+│
 ├── frontend/
 │   ├── pages/
 │   ├── components/
@@ -13,6 +58,7 @@ vibescape/
 │   ├── js/
 │   ├── assets/
 │   └── data/
+│
 ├── backend/
 │   ├── server.js
 │   ├── routes/
@@ -22,92 +68,139 @@ vibescape/
 │   ├── config/
 │   ├── .env
 │   └── package.json
-└── README.md
 ```
 
-## Frontend Notes
+---
 
-- `frontend/pages/` contains the multi-page HTML structure.
-- `frontend/components/` stores reusable UI snippets like the navbar, player, and song card.
-- `frontend/css/` is organized for `base`, `layout`, `components`, `animations`, and `themes`.
-- `frontend/js/api.js` handles backend requests.
-- `frontend/js/player.js` handles YouTube playback behavior.
-- `frontend/js/mood.js` manages mood selection and UI state.
-- `frontend/js/storage.js` manages `localStorage` for current mood, favorites, playlists, and recent songs.
-- `frontend/data/mockSongs.js` is a fallback dataset for local development.
+## 🔌 API Endpoints
 
-## Backend Features
+### 🎭 Get Songs by Mood
 
-- `GET /api/music/mood/:mood`
-  Returns songs based on supported moods: `happy`, `sad`, `energetic`
-- `GET /api/music/search?q=QUERY`
-  Returns songs based on a search query
-- Uses YouTube Data API v3 `search` endpoint
-- Returns structured song data:
-  - `videoId`
-  - `title`
-  - `thumbnail`
-  - `channelName`
+```
+GET /api/music/mood/:mood
+```
 
-## Mood Mapping
+### 🔍 Search Songs
 
-- `happy` -> `happy upbeat songs`
-- `sad` -> `sad emotional songs`
-- `energetic` -> `workout high energy songs`
+```
+GET /api/music/search?q=QUERY
+```
 
-## Backend Setup
+---
 
-1. Go to the backend folder:
+## 🎯 Mood Mapping
+
+| Mood        | Query Used                |
+| ----------- | ------------------------- |
+| 😊 Happy    | happy upbeat songs        |
+| 😔 Sad      | sad emotional songs       |
+| ⚡ Energetic | workout high energy songs |
+
+---
+
+## 🛠️ Tech Stack
+
+* ⚛️ Frontend: HTML, CSS, JavaScript
+* ⚙️ Backend: Node.js, Express.js
+* 📡 API: YouTube Data API v3
+* 💾 Storage: LocalStorage
+* 🔗 HTTP Client: Axios / Fetch
+* 🔐 Env: dotenv
+* 🌐 CORS enabled
+
+---
+
+## 🚀 Setup Instructions
+
+### 1️⃣ Clone the repo
+
+```bash
+git clone https://github.com/Inexpert-trifler/Vibescape.git
+cd Vibescape
+```
+
+---
+
+### 2️⃣ Backend Setup
 
 ```bash
 cd backend
-```
-
-2. Install dependencies:
-
-```bash
 npm install
 ```
 
-3. Add your YouTube API key in `backend/.env`:
+Create `.env` file:
 
 ```env
-YOUTUBE_API_KEY=your_key_here
-PORT=5000
+YOUTUBE_API_KEY=your_api_key_here
+PORT=5001
 ```
 
-4. Start the backend server:
+Run backend:
 
 ```bash
-npm run dev
+node server.js
 ```
 
-The API will run at [http://localhost:5000](http://localhost:5000).
+---
 
-## Example Responses
+### 3️⃣ Frontend Setup
 
-```json
-{
-  "success": true,
-  "mood": "happy",
-  "query": "happy upbeat songs",
-  "count": 2,
-  "data": [
-    {
-      "videoId": "abc123",
-      "title": "Happy Song",
-      "thumbnail": "https://i.ytimg.com/vi/abc123/hqdefault.jpg",
-      "channelName": "Artist Channel"
-    }
-  ]
-}
+```bash
+cd frontend
+npx live-server
 ```
 
-## Tech Stack
+---
 
-- Node.js
-- Express.js
-- Axios
-- dotenv
-- CORS
-- YouTube Data API v3
+## ⚠️ Important Notes
+
+* Some YouTube videos may not support embedding
+* App automatically handles fallback
+* API key should not be exposed publicly
+
+---
+
+## 📈 Future Improvements
+
+* 🎵 Playlist system
+* 👤 User authentication
+* 📊 Listening history
+* 🤖 AI-based recommendations
+* 🌍 Deployment (Vercel + Render)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+fork → clone → create branch → commit → PR
+```
+
+---
+
+## 📄 License
+
+MIT License © 2026 Vibescape
+
+---
+
+## 💡 Author
+
+👨‍💻 **Saransh Yadav**
+🚀 Building real-world projects & learning in public
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+👉 Star this repo
+👉 Share with friends
+👉 Give feedback
+
+---
+
+> 💬 *"Code. Build. Break. Repeat."*
