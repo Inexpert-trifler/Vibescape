@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5001/api/music';
+const BASE_URL = "https://vibescape-1.onrender.com";
 const REQUEST_TIMEOUT_MS = 12000;
 
 const parseResponse = async (response) => {
@@ -44,7 +44,7 @@ export const fetchSongsByMood = async (mood) => {
     throw new Error('Mood is required to fetch songs.');
   }
 
-  return request(`${BASE_URL}/mood/${encodeURIComponent(mood)}`);
+  return request(`${BASE_URL}/api/music/mood/${encodeURIComponent(mood)}`);
 };
 
 export const searchSongs = async (query) => {
@@ -52,5 +52,5 @@ export const searchSongs = async (query) => {
     throw new Error('Search query is required.');
   }
 
-  return request(`${BASE_URL}/search?q=${encodeURIComponent(query.trim())}`);
+return request(`${BASE_URL}/api/music/search?q=${encodeURIComponent(query.trim())}`);
 };
