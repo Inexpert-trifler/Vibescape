@@ -1,0 +1,8 @@
+/*
+  Layout-specific overrides live here as the frontend grows into
+  multiple real pages instead of a single-page prototype shell.
+*/
+
+.page-shell {
+  min-height: 100vh;
+}

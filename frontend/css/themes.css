@@ -1,0 +1,5 @@
+/*
+  Theme tokens are currently defined in components.css because the
+  existing UI was built in one stylesheet. This file is the scalable
+  home for future mood themes and brand-level design tokens.
+*/
