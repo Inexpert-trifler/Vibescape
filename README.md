@@ -32,6 +32,7 @@
 
 ---
 
+
 ## 🧠 How It Works
 
 ```mermaid
