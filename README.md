@@ -2,7 +2,7 @@
 
 > 🚀 A modern **mood-based music discovery platform** powered by YouTube API — built like a real SaaS product.
 
----
+--
 
 ## 🌟 Overview
 
