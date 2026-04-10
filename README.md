@@ -19,6 +19,7 @@
 
 ![Vibescape Demo](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGZqZ3N0eWZ6b2N3Z2Q2cXo2Z3J3dHh3YzVwZ3V6c2NqY2FhZ3F2biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/13HgwGsXF0aiGY/giphy.gif)
 
+
 ---
 
 ## ⚙️ Features
