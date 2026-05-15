@@ -11,8 +11,6 @@
 ✨ Clean UI
 ⚡ Fast API integration
 🎵 Real-time YouTube music playback
-
-
 ---
 
 ## 🎥 Demo Preview
